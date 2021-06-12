@@ -22,7 +22,7 @@
             </li>
             <!--This is the second user input-->
             <li>
-                Feed me an adverb: <input type="text" id="adverb-input">
+                Feed me an adverb: <input type="text" id="adverb-input" value="High">
             </li>
             <!--This is the third user input-->
             <li>
@@ -43,13 +43,13 @@
         var makeStoryButton = document.getElementById('story-maker-button');
         var makeStoryFunction = function()
         {
-            let storyTitle = document.getElementById('user-story-title');
-            let nounInput = document.getElementById('noun-input');
-            let adverbInput = document.getElementById('adverb-input');
-            let nameInput = document.getElementById('name-input');
-            let storyContents = document.getElementById('user-story-contents');
+            var storyTitle = document.getElementById('user-story-title');
+            var nounInput = document.getElementById('noun-input');
+            var adverbInput = document.getElementById('adverb-input');
+            var nameInput = document.getElementById('name-input');
+            var storyContents = document.getElementById('user-story-contents');
             storyTitle.innerHTML = "I think I'm gonna be sick";
-            storyContents.innerHTML = "Earlier I was " + adverbInput + " minding my own damn business when all of the sudden " + nameInput + " appeared out of no where and hit me with a " + nounInput + ". They gave me a concussion! And I've been throwing up nonstop since. Man, I can't stand " + nameInput + "!"; 
+            storyContents.innerHTML = "Earlier I was " + adverbInput.value + " minding my own damn business when all of the sudden " + nameInput.value + " appeared out of no where and hit me with a " + nounInput.value + ". They gave me a concussion and I've been throwing up nonstop since. Man, I can't stand " + nameInput.value + "!"; 
         };
         makeStoryButton.addEventListener('click', makeStoryFunction);
     </script>
