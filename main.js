@@ -3,12 +3,12 @@ var makeStoryButton = document.getElementById('story-maker-button');
 makeStoryButton.addEventListener('click', testUserInput);
 
 //Get the user input value so I can test that it's been entered and so I can use it in the story.
-function testUserInput(){
-    var userInput = document.getElementsByName("input");  
-    if(userInput.value == null)
-    {
+function testUserInput() {
+    var userInput = document.getElementsByName("input");
+    do {
         alert("You missed a spot.");
     }
+    while (userInput.value == null)
     makeStoryFunction();
 }
 
@@ -17,10 +17,9 @@ function testUserInput(){
 var nounInputValue = document.getElementById('noun-input');
 var adverbInputValue = document.getElementById('adverb-input');
 var nameInputValue = document.getElementById('name-input');
-function makeStoryFunction()
-{
+function makeStoryFunction() {
     var storyTitle = document.getElementById('user-story-title');
     var storyContents = document.getElementById('user-story-contents');
-    storyTitle.innerHTML = "I think I'm gonna be sick";
-    storyContents.innerHTML = "Earlier I was " + adverbInputValue.value + " minding my own damn business when all of the sudden " + nameInputValue.value + " appeared out of no where and hit me with a " + nounInputValue.value + ". They gave me a concussion and I've been throwing up nonstop since. Man, I can't stand " + nameInputValue.value + "!";
+    storyTitle.innerText = "I think I'm gonna be sick";
+    storyContents.innerText = "Earlier I was " + adverbInputValue.value + " minding my own damn business when all of the sudden " + nameInputValue.value + " appeared out of no where and hit me with a " + nounInputValue.value + ". They gave me a concussion and I've been throwing up nonstop since. Man, I can't stand " + nameInputValue.value + "!";
 };
