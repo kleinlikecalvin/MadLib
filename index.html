@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MadLib</title>
-</head>
+    <style type="text/css">
+        input:invalid {
+            border: 2px solid red;
+        }
+    </style>
+</head>`
 
 <body>
     <!--This is my title div-->
@@ -17,18 +22,21 @@
     </div>
 
     <!--This form is where I begin asking for user input-->
-    <form>
+    <form name="user-input-form">
         <!--This is the noun user input-->
-        <label>Feed me a noun:</label> <input name="input" type="text" id="noun-input" required>
+        <label for="noun">Feed me a noun:</label>
+        <input name="noun" type="text" id="noun-input" required>
         <br>
         <!--This is the adverb user input-->
-        <label>Feed me an adverb:</label> <input name="input" type="text" id="adverb-input" required>
+        <label for="adverb-input">Feed me an adverb:</label>
+        <input name="adverb-input" type="text" id="adverb-input" required>
         <br>
         <!--This is the name user input-->
-        Feed me a name: <input name="input" type="text" id="name-input" required>
+        <label for="name-input">Feed me a name:</label>
+        <input name="name-input" type="text" id="name-input" required>
         <br>
         <!--This is where the user can click a button to generate a tale-->
-        <button id="story-maker-button" onsubmit="return testUserInput()">
+        <button id="story-maker-button">
             Throw up my tale!
         </button>
     </form>
@@ -42,8 +50,17 @@
         <p id="user-story-contents"></p>
     </div>
 
+
     <!--JS begins-->
     <script src="main.js"></script>
+
+    <span id="counter">0</span>
+    <script>
+        let i = 1
+        setInterval(() => {
+            document.getElementById('counter').innerText = i++
+        }, 1000);
+    </script>
 </body>
 
 </html>

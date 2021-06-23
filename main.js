@@ -2,14 +2,14 @@
 var makeStoryButton = document.getElementById('story-maker-button');
 makeStoryButton.addEventListener('click', testUserInput);
 
+const form = document.forms["user-input-form"];
+form.addEventListener('submit', event => event.preventDefault());
+
 //Get the user input value so I can test that it's been entered and so I can use it in the story.
 function testUserInput() {
-    var userInput = document.getElementsByName("input");
-    do {
-        alert("You missed a spot.");
+    if (form.checkValidity()) {
+        makeStoryFunction();
     }
-    while (userInput.value == null)
-    makeStoryFunction();
 }
 
 
@@ -17,6 +17,7 @@ function testUserInput() {
 var nounInputValue = document.getElementById('noun-input');
 var adverbInputValue = document.getElementById('adverb-input');
 var nameInputValue = document.getElementById('name-input');
+
 function makeStoryFunction() {
     var storyTitle = document.getElementById('user-story-title');
     var storyContents = document.getElementById('user-story-contents');
